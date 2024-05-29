@@ -20,12 +20,12 @@ module calculator_tst ;
     oper = 3'b000;
   end
     always #10 oper = oper + 3'b001;
-    #100 $finish;
   
   initial begin 
     $display("\n \n \n");
     $monitor(" t = %3d , a = %b , b = %b , oper = %b , out = %b \n " , $time , a , b , oper , out );
   end 
+  #100 $finish;
 endmodule
     
 
