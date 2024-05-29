@@ -38,7 +38,7 @@ module calculator (a,b,oper, out);
         end
 
         3'b011 : begin  
-          if ( b = 4'b0000) 
+          if ( b == 4'b0000) 
             $display ("Invalid operation!!");
         end
           else begin   
@@ -51,7 +51,7 @@ module calculator (a,b,oper, out);
         end
 
         3'b100 : begin 
-          if ( b = 4'b0000) 
+          if ( b == 4'b0000) 
             $display ("Invalid operation!!");
         end
           else begin
