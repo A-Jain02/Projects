@@ -9,6 +9,8 @@ module cal_add( a, b, c, Sum)
     end 
 endmodule
 
+
+
 module cal_sub( a, b, Diff, Bout)
   input [3:0] a, b;
   output reg [3:0]Diff; 
@@ -19,6 +21,8 @@ module cal_sub( a, b, Diff, Bout)
       { Bout, Diff } = a - b; 
     end 
 endmodule
+
+
 
 module cal_mul( a , b , Prod) 
   input [3:0]a, b;
@@ -74,6 +78,8 @@ module ha( a, b, s, cout)
       cout = a & b ; 
     end 
 endmodule
+
+
 
 module cal_div( a, b, Div , Rem )
   input [3:0] a , b; 
