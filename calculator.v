@@ -47,14 +47,6 @@ module cal_mul( a , b , Prod)
   
 endmodule
 
-
-
-
-
-
-
-
-
 module array2(a, b, c)
   input [1:0]a, b;
   output reg [3:0]c;
@@ -82,6 +74,10 @@ module ha( a, b, s, cout)
       cout = a & b ; 
     end 
 endmodule
+
+module cal_div( a, b, Div , Rem )
+  input [3:0] a , b; 
+  output [
 
      
         
