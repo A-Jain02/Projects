@@ -1,4 +1,4 @@
-module calculator (a,b,oper, out);
+module calculator (a,b,oper,out);
   input [3:0] a , b;
   input [2:0] oper;
   output reg [7:0] out; 
@@ -73,7 +73,6 @@ module calculator (a,b,oper, out);
         end
 
         default : $display(" Not a valid operation " );
-
       endcase
     end
 endmodule
