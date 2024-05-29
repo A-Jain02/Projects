@@ -1,28 +1,74 @@
-module cal_add( a, b, c, s)
+module cal_add( a, b, c, Sum)
   input [3:0] a, b;
+  output reg [3:0]Sum; 
+  output reg c;
+
+  always @ ( a or b )
+    begin 
+      { c, Sum} = a + b; 
+    end 
+endmodule
+
+module cal_sub( a, b, Diff, Bout)
+  input [3:0] a, b;
+  output reg [3:0]Diff; 
+  output reg Bout;
+
+  always @ ( a or b )
+    begin 
+      { Bout, Diff} = a - b; 
+    end 
+endmodule
+
+module cal_mul( a , b , Prod , C) 
+  input [3:0] a, b;
+  output reg [7:0]Prod;
+  output reg C;
+
+  always @ ( a or b ) 
+    begin 
+      
+    end
+  
+
+endmodule 
+
+
+
+
+
+
+
+
+
+module module array2(a, b, c);
+    input [1:0]a, b;
+    output [3:0]c;
+    wire [3:0]c, temp;
+     
+    assign c[0]=a[0]&b[0];
+    assign temp[0]=a[1]&b[0];
+    assign temp[1]=a[0]&b[1];
+    assign temp[2]=a[1]&b[1];
+    ha z1(temp[0],temp[1],c[1],temp[3]);
+    ha z2(temp[2],temp[3],c[2],c[3]);
+ 
+endmodule
+  
+  module ha( a, b, s, cout)
+   input [3:0] a, b;
   output reg [3:0]s; 
   output reg c;
 
   always @ ( a or b )
     begin 
-      { c, s} = a + b; 
+      s = a ^ b ;
+      cout = a & b ; 
     end 
 endmodule
 
-module cal_sub( a, b, D, Bout)
-  input [3:0] a, b;
-  output reg [3:0]D; 
-  output reg Bout;
-
-  always @ ( a or b )
-    begin 
-      { Bout, D} = a - b; 
-    end 
-endmodule
-
-module cal_mul( a , b , m , C) 
-  input [3:0] a, b;
-  output reg [7:0]s;
-  output reg C;
-
-  always @ (
+     
+        
+      
+     
+    
