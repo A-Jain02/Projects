@@ -16,7 +16,7 @@ module calculator_tst ;
 
   initial begin 
     a = 4'b1001 ;
-    b = 4'b0011
+    b = 4'b0011 ;
     oper = 3'b000;
   end
     always #10 oper = oper + 3'b001;
