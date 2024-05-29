@@ -7,3 +7,16 @@ module var_shift_tb ;
   reg [ N-1 : 0 ] q;
 
   var_shift dut(
+    .clk(clk) ,
+    .clr(clr) ,
+    .dir(dir) ,
+    .q(q)
+  );
+
+  initial 
+    begin 
+
+    end
+
+endmodule
+
