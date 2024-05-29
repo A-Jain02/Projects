@@ -40,7 +40,8 @@ module calculator (a,b,oper, out);
         3'b011 : begin  
           if ( b = 4'b0000) 
             $display ("Invalid operation!!");
-          else     
+        end
+          else begin   
             sum <= 7'b0 ; 
             diff <= 7'b0 ;
             prod <= 7'b0 ; 
@@ -52,7 +53,8 @@ module calculator (a,b,oper, out);
         3'b100 : begin 
           if ( b = 4'b0000) 
             $display ("Invalid operation!!");
-          else 
+        end
+          else begin
             sum <= 7'b0 ; 
             diff <= 7'b0 ;
             prod <= 7'b0 ; 
