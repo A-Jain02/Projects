@@ -14,5 +14,23 @@ module calculator_tst ;
     .out(out) ,
   );
 
+  initial begin 
+    a = 4'b1001 , b = 4'b0011 , oper = 3'b000 ;
+    #10 
+    a = 4'b1001 , b = 4'b0011 , oper = 3'b001 ;
+    #10
+    a = 4'b1001 , b = 4'b0011 , oper = 3'b010 ;
+    #10
+    a = 4'b1001 , b = 4'b0011 , oper = 3'b011 ;
+    #10
+    a = 4'b1001 , b = 4'b0011 , oper = 3'b100 ;
+    #10
+    a = 4'b1001 , b = 4'b0011 , oper = 3'b101 ;
+    #10
+    a = 4'b1001 , b = 4'b0011 , oper = 3'b111 ;
+    end
+endmodule
+    
+
   
   
