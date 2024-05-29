@@ -7,25 +7,26 @@ module calculator_tst ;
 
   wire [7:0] out; 
 
-  calculator uut ( 
+  calculator dut( 
     .a(a) ,
     .b(b) ,
     .oper(oper) ,
-    .out(out) ,
-  );
+    .out(out)
+    );
 
   initial begin 
-    a = 4'b1001 ;
-    b = 4'b0011 ;
+    a = 4'b1111 ;
+    b = 4'b0110 ;
     oper = 3'b000;
-  end
-    always #10 oper = oper + 3'b001;
-  
+    #120 $finish;
+    end 
+    always #10 oper = oper + 3'b001; 
+   
   initial begin 
     $display("\n \n \n");
     $monitor(" t = %3d , a = %b , b = %b , oper = %b , out = %b \n " , $time , a , b , oper , out );
+
   end 
-  #100 $finish;
 endmodule
     
 
