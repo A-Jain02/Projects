@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module var_shift_tb ;
   reg clk ; 
   reg clr ;
