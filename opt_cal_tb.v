@@ -33,7 +33,7 @@ module calculator_tst ;
 
   initial begin 
     $display("\n \n \n");
-      $monitor(" t = %3d , a = %b , b = %b , oper = %b , out = %b " , $time , a , b , oper , out );
+    $monitor(" t = %3d , a = %b , b = %b , oper = %b , out = %b \n " , $time , a , b , oper , out );
   end 
 endmodule
     
