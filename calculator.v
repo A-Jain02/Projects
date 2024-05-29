@@ -20,7 +20,7 @@ module cal_sub( a, b, Diff, Bout)
     end 
 endmodule
 
-module cal_mul( a , b , Prod , C) 
+module cal_mul( a , b , Prod) 
   input [3:0]a, b;
   output [7:0]Prod;
      
