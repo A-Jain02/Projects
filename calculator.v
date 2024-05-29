@@ -5,7 +5,7 @@ module cal_add( a, b, c, Sum)
 
   always @ ( a or b )
     begin 
-      { c, Sum} = a + b; 
+      { c , Sum } = a + b;
     end 
 endmodule
 
@@ -16,7 +16,7 @@ module cal_sub( a, b, Diff, Bout)
 
   always @ ( a or b )
     begin 
-      { Bout, Diff} = a - b; 
+      { Bout, Diff } = a - b; 
     end 
 endmodule
 
@@ -41,24 +41,26 @@ endmodule
 
 
 
-module module array2(a, b, c);
-    input [1:0]a, b;
-    output [3:0]c;
-    wire [3:0]c, temp;
-     
-    assign c[0]=a[0]&b[0];
-    assign temp[0]=a[1]&b[0];
-    assign temp[1]=a[0]&b[1];
-    assign temp[2]=a[1]&b[1];
-    ha z1(temp[0],temp[1],c[1],temp[3]);
-    ha z2(temp[2],temp[3],c[2],c[3]);
- 
+module array2(a, b, c)
+  input [1:0]a, b;
+  output reg [3:0]c;
+  output reg [3:0]temp;
+
+  always @ ( a or b )
+    begin 
+      c[0] = a[0] & b[0];
+      temp[0] = a[1] & b[0];
+      temp[1] = a[0] & b[1];
+      temp[2] = a[1] & b[1];
+      ha z1(temp[0],temp[1],c[1],temp[3]);
+      ha z2(temp[2],temp[3],c[2],c[3]);
+    end
 endmodule
   
-  module ha( a, b, s, cout)
+module ha( a, b, s, cout)
    input [3:0] a, b;
   output reg [3:0]s; 
-  output reg c;
+  output reg cout;
 
   always @ ( a or b )
     begin 
