@@ -20,4 +20,9 @@ module cal_sub( a, b, D, Bout)
     end 
 endmodule
 
-module 
+module cal_mul( a , b , m , C) 
+  input [3:0] a, b;
+  output reg [7:0]s;
+  output reg C;
+
+  always @ (
