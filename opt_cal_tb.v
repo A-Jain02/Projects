@@ -30,6 +30,11 @@ module calculator_tst ;
     a = 4'b1001 , b = 4'b0011 , oper = 3'b111 ;
     #10 $finish;
     end
+
+  initial begin 
+    $display("\n \n \n");
+      $monitor(" t = %3d , a = %b , b = %b , oper = %b , out = %b " , $time , a , b , oper , out );
+  end 
 endmodule
     
 
