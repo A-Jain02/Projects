@@ -15,22 +15,13 @@ module calculator_tst ;
   );
 
   initial begin 
-    a = 4'b1001 , b = 4'b0011 , oper = 3'b000 ;
-    #10 
-    a = 4'b1001 , b = 4'b0011 , oper = 3'b001 ;
-    #10
-    a = 4'b1001 , b = 4'b0011 , oper = 3'b010 ;
-    #10
-    a = 4'b1001 , b = 4'b0011 , oper = 3'b011 ;
-    #10
-    a = 4'b1001 , b = 4'b0011 , oper = 3'b100 ;
-    #10
-    a = 4'b1001 , b = 4'b0011 , oper = 3'b101 ;
-    #10
-    a = 4'b1001 , b = 4'b0011 , oper = 3'b111 ;
-    #10 $finish;
-    end
-
+    a = 4'b1001 ;
+    b = 4'b0011
+    oper = 3'b000;
+  end
+    always #10 oper = oper + 3'b001;
+    #100 $finish;
+  
   initial begin 
     $display("\n \n \n");
     $monitor(" t = %3d , a = %b , b = %b , oper = %b , out = %b \n " , $time , a , b , oper , out );
