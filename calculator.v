@@ -1,3 +1,4 @@
+// addition command
 module cal_add( a, b, c, Sum)
   input [3:0] a, b;
   output reg [3:0]Sum; 
@@ -10,7 +11,7 @@ module cal_add( a, b, c, Sum)
 endmodule
 
 
-
+//subtraction command
 module cal_sub( a, b, Diff, Bout)
   input [3:0] a, b;
   output reg [3:0]Diff; 
@@ -23,7 +24,7 @@ module cal_sub( a, b, Diff, Bout)
 endmodule
 
 
-
+// multiplication command
 module cal_mul( a , b , Prod) 
   input [3:0]a, b;
   output [7:0]Prod;
@@ -80,7 +81,7 @@ module ha( a, b, s, cout)
 endmodule
 
 
-
+// division command ( incomplete ) 
 module cal_div( a, b, Div , Rem )
   input [3:0] a , b; 
   output [
