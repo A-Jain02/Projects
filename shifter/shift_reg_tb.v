@@ -6,13 +6,16 @@ module var_shift_tb ;
   reg dir ;
   reg en ;
   reg [31 : 0 ] in;
-    wire [31 : 0 ] q;
+  reg [ 5 : 0 ] shift ;
+  wire [31 : 0 ] q;
 
   var_shift dut(
     .clk(clk) ,
     .clr(clr) ,
     .dir(dir) ,
     .en(en) ,
+    .in(in) ,
+    .shift(shift) ,
     .q(q)
   );
 
