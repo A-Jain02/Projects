@@ -1,8 +1,9 @@
-module var_shift #(parameter N = 32) ( clk , dir , clr , en , in , q) 
+module var_shift ( clk , dir , clr , en , in , shift , q ) 
   
   input clk , dir , clr , en ;
-  input reg [N-1:0] in ; 
-  output reg [N-1:0] q ;
+  input reg [5:0] shift ; 
+  input reg [31:0] in ; 
+  output reg [31:0] q ;
   always @ (posedge clk)  
     if(!clr) // clear pin is active low always
         q <= 0;  // if clear then output resets
@@ -10,8 +11,8 @@ module var_shift #(parameter N = 32) ( clk , dir , clr , en , in , q)
         begin
           if(en) // output enable
             case (dir)
-              0 : { 0 , q[N-1:1] };  // right shift
-              1 : { q[N-2:0] , 0 };  // left shift
+              0 : { in[31-shift:0] , q[31:shift] };  // right shift
+              1 : { q[31-shift:0] , in[31:31-(shift-1) };  // left shift
             endcase
           else  // output disable
             q <= q ;
