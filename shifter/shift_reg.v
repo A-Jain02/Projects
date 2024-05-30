@@ -1,4 +1,4 @@
-module var_shift #(parameter N = 32) (input clk , dir , clr , output reg[N-1:0] q) 
+module var_shift #(parameter N = 32) (input clk , dir , clr , en , output reg[N-1:0] q) 
   
   always @ (posedge clk)  
     if(!clr) // clear pin is active low always
