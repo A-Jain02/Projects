@@ -11,6 +11,7 @@ module var_shift_tb ;
     .clk(clk) ,
     .clr(clr) ,
     .dir(dir) ,
+    .en(en) ,
     .q(q)
   );
 
