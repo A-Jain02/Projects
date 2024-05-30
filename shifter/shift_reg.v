@@ -14,8 +14,8 @@ module var_shift ( clk , dir , clr , en , in , shift , q )
         begin
           if(en) // output enable
             case (dir)
-              0 : { in[31-shift:0] , q[31:shift] };  // right shift
-              1 : { q[31-shift:0] , in[31:31-(shift-1) };  // left shift
+              0 : { in[31-shift : 0] , q[31 : shift] };  // right shift
+              1 : { q[31-shift : 0] , in[31 : 31-(shift-1)] };  // left shift
             endcase
           else  // output disable
             q <= q ;
