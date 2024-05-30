@@ -3,7 +3,7 @@
 module var_shift ( clk , dir , clr , en , in , shift , q ) 
   
   input clk , dir , clr , en ;
-  input reg [5:0] shift ; 
+  input int shift ; 
   input reg [31:0] in ; 
   output reg [31:0] q ;
   
