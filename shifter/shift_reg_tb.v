@@ -40,7 +40,7 @@ module var_shift_tb ;
         $finish;
     end
   initial 
-    $monitor ("time = %3d , in=%h, en=%0b, dir=%0b, shift=%b, out=%h \n" , $time , in , en , dir , shift, out);
+    $monitor ("time = %3d , in=%h, en=%0b, dir=%0b, shift=%d, out=%h \n" , $time , in , en , dir , shift, out);
   end 
 endmodule
 
