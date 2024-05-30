@@ -15,8 +15,7 @@ module var_shift_tb ;
     .q(q)
   );
 
-  initial 
-    #10 clk ~= clk
+  initial
     
     begin 
 
