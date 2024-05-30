@@ -26,8 +26,8 @@ module var_shift_tb ;
       en <= 0;
       dir <= 0;
       clr <= 0;
-      shift <= 6'b0; 
-      in <= 32'h1a6;
+      shift <= 5'b0; 
+      in <= 32'h7105c1a6;
    end
     
   initial
@@ -35,7 +35,7 @@ module var_shift_tb ;
       clr <= 0 ; 
       #20 clr <= 1 ; 
           en <= 1 ; 
-        shif
+        shift = 5'b01011
       repeat (shift) @ ( posedge clk )
         
       
