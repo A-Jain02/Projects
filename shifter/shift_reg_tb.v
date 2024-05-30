@@ -35,8 +35,8 @@ module var_shift_tb ;
       clr <= 0 ; 
       #20 clr <= 1 ; 
           en <= 1 ; 
-          shift = 6'b011011
-      repeat (shift) @ ( posedge clk )
+          shift = 6'b011011  // shift it by 27 bits
+      repeat (shift) @ ( posedge clk )  // not sure if this format works ( bracket must have a decimal number i.e. number of clock cycles )
         $finish;
     end
   initial 
