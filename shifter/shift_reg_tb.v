@@ -16,12 +16,11 @@ module var_shift_tb ;
     .q(q)
   );
 
-  initial
-    #10 clk ~= clk // 20 ns each period
+  always #10 clk ~= clk // 20 ns each period
     
+  initial
     begin 
 
     end
-
 endmodule
 
