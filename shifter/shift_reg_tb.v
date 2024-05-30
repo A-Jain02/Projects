@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
 
 module var_shift_tb ;
-  parameter N = 32 ;
   reg clk ; 
   reg clr ;
   reg dir ;
   reg en ;
-  wire [ N-1 : 0 ] q;
+  reg [31 : 0 ] in;
+    wire [31 : 0 ] q;
 
   var_shift dut(
     .clk(clk) ,
