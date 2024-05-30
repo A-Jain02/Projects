@@ -26,7 +26,7 @@ module var_shift_tb ;
       en <= 0;
       dir <= 0;
       clr <= 0;
-      shift <= 5'b0; 
+      shift <= 6'b0; 
       in <= 32'h7105c1a6;
    end
     
@@ -35,13 +35,12 @@ module var_shift_tb ;
       clr <= 0 ; 
       #20 clr <= 1 ; 
           en <= 1 ; 
-        shift = 5'b01011
+          shift = 6'b011011
       repeat (shift) @ ( posedge clk )
-        
-      
-      
-      
-
+        $finish;
     end
+  initial 
+    $monitor ("time = %3d , in=%h, en=%0b, dir=%0b, shift=%b, out=%h \n" , $time , in , en , dir , shift, out);
+  end 
 endmodule
 
