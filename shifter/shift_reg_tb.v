@@ -6,7 +6,7 @@ module var_shift_tb ;
   reg clr ;
   reg dir ;
   reg en ;
-  reg [ N-1 : 0 ] q;
+  wire [ N-1 : 0 ] q;
 
   var_shift dut(
     .clk(clk) ,
