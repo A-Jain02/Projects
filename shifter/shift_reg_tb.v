@@ -6,7 +6,7 @@ module var_shift_tb ;
   reg dir ;
   reg en ;
   reg [31 : 0] in;
-  reg [5 : 0] shift ;
+  int shift ;
   wire [31 : 0] q;
 
   var_shift dut(
@@ -26,7 +26,7 @@ module var_shift_tb ;
       en <= 0;
       dir <= 0;
       clr <= 0;
-      shift <= 6'b0; 
+      shift <= 0; 
       in <= 32'h7105c1a6;
    end
     
