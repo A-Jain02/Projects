@@ -1,5 +1,8 @@
-module var_shift #(parameter N = 32) (input clk , dir , clr , en , output reg[N-1:0] q) 
+module var_shift #(parameter N = 32) ( clk , dir , clr , en , in , q) 
   
+  input clk , dir , clr , en ;
+  input reg [N-1:0] in ; 
+  output reg [N-1:0] q ;
   always @ (posedge clk)  
     if(!clr) // clear pin is active low always
         q <= 0;  // if clear then output resets
