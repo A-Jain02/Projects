@@ -1,3 +1,4 @@
+`timescale 1ns/ 1ps
 module var_shift ( clk , dir , clr , en , in , shift , q ) 
   
   input clk , dir , clr , en ;
