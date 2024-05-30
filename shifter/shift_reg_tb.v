@@ -1,6 +1,7 @@
 `timescale 1ns / 1ps
 
 module var_shift_tb ;
+  parameter N = 32 ;
   reg clk ; 
   reg clr ;
   reg dir ;
@@ -16,6 +17,7 @@ module var_shift_tb ;
   );
 
   initial
+    #10 clk ~= clk // 20 ns each period
     
     begin 
 
