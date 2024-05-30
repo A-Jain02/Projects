@@ -21,8 +21,25 @@ module var_shift_tb ;
 
   always #10 clk ~= clk // 20 ns each period
     
+    initial begin
+      clk <= 0;
+      en <= 0;
+      dir <= 0;
+      clr <= 0;
+      in <= 'h1a6;
+   end
+    
   initial
     begin 
+      clr <= 0 ; 
+      #20 clr <= 1 ; 
+          en <= 1 ; 
+        
+      repeat (shift) @ ( posedge clk )
+        
+      
+      
+      
 
     end
 endmodule
