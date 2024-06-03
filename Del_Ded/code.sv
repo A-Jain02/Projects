@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module delayed_debouncer (
   input logic sw ;
   input logic clk ;
