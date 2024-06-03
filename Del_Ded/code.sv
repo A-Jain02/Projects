@@ -101,10 +101,10 @@ module delayed_debouncer (
     end
 
   // moore output
-  assign db = ( (state_next = one) ||   
-                 (state_next = wait0_0) || 
-                 (state_next = wait0_1) || 
-                 (state_next = wait0_2) 
+  assign db = ( (state_next == one) ||   
+               (state_next == wait0_0) || 
+               (state_next == wait0_1) || 
+               (state_next == wait0_2) 
               );    
     end
                 
