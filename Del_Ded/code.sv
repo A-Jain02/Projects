@@ -108,7 +108,7 @@ module delayed_debouncer (
                (state_next == wait0_1) || 
                (state_next == wait0_2) 
               );    
-    end
+endmodule
                 
     
                   
