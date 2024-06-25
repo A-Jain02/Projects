@@ -31,7 +31,7 @@ module True_DPR ( clk , en_a , en_b , we_a, we_b , din_a , din_b, dout_a, dout_b
 
   always (@posedge clk) begin
     if (en_b) begin 
-      if ( we_b && ( !we_a || addr_a != addr_b )) begin 
+      if ( we_b && ( !we_a || (addr_a != addr_b))) begin 
         ram [ addr_b ] <= din_b ; 
       end
       else (!we_b) begin 
