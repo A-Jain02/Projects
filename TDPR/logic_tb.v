@@ -32,7 +32,10 @@ module True_DPR_tb;
     always #5 clk ~= clk ; // clock generation 
 
     initial begin 
-      clk =0,  
+      clk <= 0, en_a <= 0, en_b <= 0 , we_a <=0, we_b <=0;
+      din_a <= 0 , din_b <=0 , addr_a <= 0 , addr_b <= 0;
+      
+      
       
       
   
