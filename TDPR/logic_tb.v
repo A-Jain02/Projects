@@ -2,13 +2,17 @@
 
 module True_DPR_tb;
 
+  //PARAMETERS
   parameter ADDR_SIZE = 8 ;
   parameter DATA_SIZE = 8 ;
   parameter RAM_SIZE = 1 << ADDR_SIZE ;
 
+  //INPUTS
   reg clk, en_a , en_b , we_a , we_b ; 
   reg [ DATA_SIZE - 1 : 0 ] din_a, din_b;
   reg [ ADDR_SIZE - 1 : 0 ] addr_a , addr_b ;
+
+  //OUTPUTS
   wire [ DATA_SIZE - 1 : 0 ] dout_a, dout_b ;
 
   module True_DPR #( .ADDR_SIZE(ADDR_SIZE), .DATA_SIZE(DATA_SIZE), .RAM_SIZE(RAM_SIZE)) dut (
@@ -25,5 +29,9 @@ module True_DPR_tb;
     .dout_b (dout_b)
   );
 
-    always #5 clk ~= clk ;
+    always #5 clk ~= clk ; // clock generation 
+
+    initial begin 
+      
+      
   
