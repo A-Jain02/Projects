@@ -8,16 +8,16 @@ module True_DPR_tb;
   wire [ DATA_SIZE - 1 : 0 ] dout_a, dout_b ;
 
   module True_DPR dut (
-    .clk (clk)
-    .en_a (en_a)
-    .en_b (en_b)
-    .we_a (we_a)
-    .we_b (we_b)
-    .din_a (din_a)
-    .din_b (din_b)
-    .addr_a (addr_a)
-    .addr_b (addr_b)
-    .dout_a (dout_a)
+    .clk (clk) ,
+    .en_a (en_a),
+    .en_b (en_b),
+    .we_a (we_a),
+    .we_b (we_b),
+    .din_a (din_a),
+    .din_b (din_b),
+    .addr_a (addr_a),
+    .addr_b (addr_b),
+    .dout_a (dout_a),
     .dout_b (dout_b)
   );
   
