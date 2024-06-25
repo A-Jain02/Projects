@@ -12,5 +12,9 @@ module True_DPR ( clk , en_a , en_b , we_a, we_b , din_a , din_b, dout_a, dout_b
   input [ DATA_SIZE - 1 : 0 ] din_a, din_b;
   input [ ADDR_SIZE - 1 : 0 ] addr_a , addr_b ;
   output reg [ DATA_SIZE - 1 : 0 ] dout_a, dout_b ;
+
+  reg [ DATA_SIZE - 1 : 0 ] ram [ 0 : RAM_SIZE - 1 ] ;
+  
+  
   
   
