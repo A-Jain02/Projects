@@ -24,4 +24,7 @@ module True_DPR_tb;
     .dout_a (dout_a),
     .dout_b (dout_b)
   );
+
+    always begin 
+      #5 clk ~= clk ;
   
