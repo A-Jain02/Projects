@@ -15,7 +15,7 @@ module True_DPR_tb;
   //OUTPUTS
   wire [ DATA_SIZE - 1 : 0 ] dout_a, dout_b ;
 
-  module True_DPR #( .ADDR_SIZE(ADDR_SIZE), .DATA_SIZE(DATA_SIZE), .RAM_SIZE(RAM_SIZE)) dut (
+  module True_DPR #(.ADDR_SIZE(ADDR_SIZE), .DATA_SIZE(DATA_SIZE), .RAM_SIZE(RAM_SIZE)) dut (
     .clk (clk),
     .en_a (en_a),
     .en_b (en_b),
@@ -32,6 +32,7 @@ module True_DPR_tb;
     always #5 clk ~= clk ; // clock generation 
 
     initial begin 
+      clk =0,  
       
       
   
