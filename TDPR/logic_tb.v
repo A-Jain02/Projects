@@ -34,6 +34,17 @@ module True_DPR_tb;
     initial begin 
       clk <= 0, en_a <= 0, en_b <= 0 , we_a <=0, we_b <=0;
       din_a <= 0 , din_b <=0 , addr_a <= 0 , addr_b <= 0;
+    end
+
+    #10
+
+    initial begin 
+      en_a = 1 , en_b =0;
+      #5
+      we_a = 1 , addr_a = 8'h01 , din_a = 8'hA1; 
+      #10
+      we_a = 0 , addr_a = 8'h01 ; 
+      
       
       
       
