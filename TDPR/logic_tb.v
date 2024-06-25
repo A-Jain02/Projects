@@ -44,6 +44,8 @@ module True_DPR_tb;
       we_a = 1 , addr_a = 8'h01 , din_a = 8'hA1; 
       #10
       we_a = 0 , addr_a = 8'h01 ; 
+    end
+    
       
       
       
