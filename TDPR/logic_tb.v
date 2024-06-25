@@ -25,6 +25,5 @@ module True_DPR_tb;
     .dout_b (dout_b)
   );
 
-    always begin 
-      #5 clk ~= clk ;
+    always #5 clk ~= clk ;
   
