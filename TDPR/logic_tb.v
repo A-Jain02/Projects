@@ -4,7 +4,7 @@ module True_DPR_tb;
 
   parameter ADDR_SIZE = 8 ;
   parameter DATA_SIZE = 8 ;
-  parameter RAM_SIZE = 1 << ADDR_WIDTH ;
+  parameter RAM_SIZE = 1 << ADDR_SIZE ;
 
   reg clk, en_a , en_b , we_a , we_b ; 
   reg [ DATA_SIZE - 1 : 0 ] din_a, din_b;
