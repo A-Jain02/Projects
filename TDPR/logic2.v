@@ -59,6 +59,15 @@ module true_dual_port_ram (
             data_out_b <= prev_data_out_b; // Show previous value when enable is low
         end
     end
+     // Maintain previous data output when enable is low
+    always @(posedge clk) begin
+        if (!en_a) begin
+            data_out_a <= data_out_a; // Keep previous value when enable is low for port A
+        end
+        if (!en_b) begin
+            data_out_b <= data_out_b; // Keep previous value when enable is low for port B
+        end
+    end
 
     // Collision handling logic for simultaneous writes to the same address
     always @(posedge clk) begin
