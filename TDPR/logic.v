@@ -2,18 +2,24 @@
 
 
 
-module True_DPR ( clk , en_a , en_b , we_a, we_b , din_a , din_b, dout_a, dout_b, addr_a, addr_b );
+module True_DPR ( clk , en_a , en_b , we_a, we_b , din_a , din_b, dout_a, dout_b, addr_a, addr_b, reset );
 
   #parameter ADDR_SIZE = 8 ;
   #parameter DATA_SIZE = 8 ;
   #parameter RAM_SIZE = 1 << ADDR_SIZE ;
 
-  input clk, en_a , en_b , we_a , we_b ; 
+  input clk, en_a , en_b , we_a , we_b, reset; 
   input [ DATA_SIZE - 1 : 0 ] din_a, din_b;
   input [ ADDR_SIZE - 1 : 0 ] addr_a , addr_b ;
   output reg [ DATA_SIZE - 1 : 0 ] dout_a, dout_b ;
 
-  reg [ DATA_SIZE - 1 : 0 ] ram [ 0 : RAM_SIZE - 1 ] ;
+  reg [ DATA_SIZE - 1 : 0 ] ram [ 0 : RAM_SIZE - 1 ];
+
+  always (@posedge clk) begin
+    if(reset)begin 
+      dout_a <= 0 ; dout_b <= 0;
+    end
+  end
 
   always (@posedge clk) begin
     if (en_a) begin 
