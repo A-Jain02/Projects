@@ -15,7 +15,8 @@ module True_DPR_tb;
   //OUTPUTS
   wire [ DATA_SIZE - 1 : 0 ] dout_a, dout_b ;
 
-  module True_DPR #(.ADDR_SIZE(ADDR_SIZE), .DATA_SIZE(DATA_SIZE), .RAM_SIZE(RAM_SIZE)) dut (
+  True_DPR #(.ADDR_SIZE(ADDR_SIZE),.DATA_SIZE(DATA_SIZE),.RAM_SIZE(RAM_SIZE)) dut (
+  
     .clk (clk),
     .en_a (en_a),
     .en_b (en_b),
@@ -29,31 +30,25 @@ module True_DPR_tb;
     .dout_b (dout_b)
   );
 
-    always #5 clk ~= clk ; // clock generation 
+    always #5 clk = ~clk ; // clock generation 
 
     initial begin 
-      clk <= 0, en_a <= 0, en_b <= 0 , we_a <=0, we_b <=0;
-      din_a <= 0 , din_b <=0 , addr_a <= 0 , addr_b <= 0;
-    end
-
-    #10
-
-    initial begin 
-      en_a = 1 , en_b =0;
-      #5
-      we_a = 1 , addr_a = 8'h01 , din_a = 8'hA1; 
-      #10
-      we_a = 0 , addr_a = 8'h01 ; 
-    end
-
-    initial begin 
-      en_a = 0 ; en_b=1;
-      #5 
-      we_a = 1 ; we_b =1 ; din_a = 8'h16 ; din_b = 8'hBB; addr_b= 8'h10; addr_a=8'h11;
-      #10 
-      we_a = 0 ; we_b =0; addr_b = 8'h10; addr_a = 8'h11;
-    end
-  endmodule
+      clk <= 0; en_a <= 0; en_b <= 0; we_a <=0; we_b <=0;
+      din_a <= 0; din_b <=0; addr_a <= 0; addr_b <= 0;
+     end 
+      initial begin
+      #10;
+       en_a <= 1 ; en_b <=0;
+       we_a <= 1; addr_a <= 2'h01 ; din_a <= 2'hA1; 
+      #10;
+       we_a <= 0 ; addr_a <= 2'h01 ;  
+      #10;
+       en_a <= 0 ; en_b <=1;
+       we_a <= 1 ; we_b <=1 ; din_a <= 2'h16 ; din_b <= 2'h13; addr_b <= 2'h10; addr_a <=2'h11;
+      #20;
+       we_a <= 0 ; we_b <= 0; addr_b <= 2'h10; addr_a <= 2'h11;
+       end
+ endmodule
     
       
       
