@@ -55,7 +55,16 @@ module True_DPR_tb;
         #10;
         we_a = 0; we_b = 0;
         addr_a = 8'h03; addr_b = 8'h04; // Read from addresses 0x03 and 0x04
+        #10
+        en_a = 1; en_b = 1;
+        addr_a = 8'h05; addr_b = 8'h05;
+        data_in_a = 8'hEE; we_a = 1; // Write 0xEE from port A
+        data_in_b = 8'hFF; we_b = 1; // Write 0xFF from port B
         #10;
+        we_a = 0; we_b = 0;
+        addr_a = 8'h05; addr_b = 8'h05; // Read from address 0x05
+        #10;
+  end
  endmodule
     
       
