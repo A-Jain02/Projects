@@ -48,6 +48,14 @@ module True_DPR_tb;
       #20;
        we_a <= 0 ; we_b <= 0; addr_b <= 2'h10; addr_a <= 2'h11;
        end
+
+   en_a = 1; en_b = 1;
+        addr_a = 8'h03; data_in_a = 8'hCC; we_a = 1;
+        addr_b = 8'h04; data_in_b = 8'hDD; we_b = 1;
+        #10;
+        we_a = 0; we_b = 0;
+        addr_a = 8'h03; addr_b = 8'h04; // Read from addresses 0x03 and 0x04
+        #10;
  endmodule
     
       
