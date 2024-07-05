@@ -38,6 +38,9 @@ module uart_tb () ;
       .rx_done_tick(rx_done_tick)
     );
 
+   // Generate clock signal
+    always #10 clk = ~clk;  // 100 MHz clock
+
   
   
   
