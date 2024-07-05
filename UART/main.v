@@ -19,11 +19,6 @@ module UART
   output tx_full;
   output tx;
 
-  // baud clk generator
-  input [10:0] TIMER_FINAL_VALUE;
-
-);
-
   //timer as baug rate generator
 
   wire tick;
