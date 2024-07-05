@@ -2,7 +2,7 @@
 
 module uart_rx #( parameter DBIT = 8 , SB_TICK = 16) 
   (
-    input clk , reset_n , s_tick, rx ,
+    input clk , reset_n , rx ,
     output [ DBIT - 1 : 0 ] rx_dout ,
     output reg rx_done_tick 
   );
