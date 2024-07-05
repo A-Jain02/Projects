@@ -30,8 +30,6 @@ module UART
   timer_input #( .BITS(11)) baud_rate_generator (
     .clk(clk),
     .reset_n(reset_n),
-    .enable(1'b1),
-    .FINAL_VALUE(TIMER_FINAL_VALUE),
     .done(tick)
   );
 
