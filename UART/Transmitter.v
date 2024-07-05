@@ -17,7 +17,7 @@ module uart_tx #( parameter DBIT = 8 , SB_TICK = 16)
     reg tx_next ; // tracking the transmitted bit
 
     wire s_tick;
-    timer_input #( .BITS(11)) baud_rate_generator (
+    timer_input #( .BITS(10)) baud_rate_generator (
     .clk(clk),
     .reset_n(reset_n),
     .done(s_tick)
