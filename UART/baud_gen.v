@@ -14,7 +14,7 @@ module timer_input #( parameter BITS = 11 )
     if (~reset_n)
       Q_reg <= 0;
     else if (enable) 
-      Q_reg <= Q_next ;
+      Q_next <= Q_reg ;
     else 
       Q_reg <= Q_reg ;
   end
