@@ -41,6 +41,43 @@ module uart_tb () ;
    // Generate clock signal
     always #10 clk = ~clk;  // 100 MHz clock
 
+   initial begin
+        // Initialize signals
+        clk = 0;
+        rst = 0;
+        tx_start = 0;
+        tx_data = 8'h00;
+
+        // Reset
+        #100;
+        rst = 1;
+
+        // Transmit data
+        #100;
+        tx_data = 8'hA5;  // Data to transmit
+        tx_start = 1;
+        #20;
+        tx_start = 0;
+
+        // Wait for transmission to complete
+       wait(!tx_done_tick);
+
+        // Wait for receiver to be ready
+       wait(rx_done_tick);
+
+        // Check received data
+        if (rx_data == 8'hA5) begin
+            $display("Test Passed: Received data matches transmitted data");
+        end else begin
+            $display("Test Failed: Received data does not match transmitted data");
+        end
+
+        // Finish simulation
+        #100;
+        $finish;
+    end
+
+endmodule
   
   
   
