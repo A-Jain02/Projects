@@ -22,7 +22,7 @@ module timer_input #( parameter BITS = 4 )
   assign done = Q_reg == FINAL_VALUE
 
     always @*
-      Q_reg = done ? 'b0 : Q_reg + 1;
+      Q_next = done ? 'b0 : Q_reg + 1;
 
 endmodule 
       
