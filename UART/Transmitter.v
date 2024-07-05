@@ -37,7 +37,7 @@ module uart_tx #( parameter DBIT = 8 , SB_TICK = 16)
                         begin
                           s_reg = 0;
                           b_reg = tx_din;
-                          state_reg = start ;
+                          state = start ;
                         end
                     end
               
@@ -49,7 +49,7 @@ module uart_tx #( parameter DBIT = 8 , SB_TICK = 16)
                             begin 
                               s_reg = 0;
                               n_reg = 0;
-                              state_reg = data ;
+                              state = data ;
                             end
                         else 
                           s_reg = s_reg + 1;
@@ -64,7 +64,7 @@ module uart_tx #( parameter DBIT = 8 , SB_TICK = 16)
                               s_reg = 0;
                               b_reg = { 1'b0 , b_reg[ DBIT -1 : 1 ] };
                               if( n_reg == (DBIT - 1))
-                                state_reg = stop;
+                                state = stop;
                             else
                               n_reg = n_reg + 1;
                             end
@@ -78,13 +78,13 @@ module uart_tx #( parameter DBIT = 8 , SB_TICK = 16)
                       if(s_tick)
                         if(s_reg == (SB_TICK - 1)) begin
                             tx_done_tick = 1;
-                            state_reg = idle;
+                            state = idle;
                           end
                         else
                           s_reg = s_reg + 1;
                     end
               
-                  default : state_reg = idle ;
+                  default : statea = idle ;
             endcase 
   end
 endmodule
