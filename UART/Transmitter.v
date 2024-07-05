@@ -8,8 +8,6 @@ module uart_tx #( parameter DBIT = 8 , SB_TICK = 16)
     output reg tx 
   );
 
-  
-
    localparam idle = 0 , start = 1 , data = 2 , stop = 3;
   
     reg [ 2 : 0 ] n_reg ;  // counter for DBITS
@@ -17,6 +15,13 @@ module uart_tx #( parameter DBIT = 8 , SB_TICK = 16)
     reg [ DBIT - 1 : 0 ] b_reg  ; // stores the received data bits 
     reg [ 1 : 0 ] state  ; // the 4 states
     reg tx_next ; // tracking the transmitted bit
+
+    wire s_tick;
+    baud_generator #(.CLOCK_FREQ(CLOCK_FREQ), .BAUD_RATE(BAUD_RATE)) baud_gen (
+        .clk(clk),
+        .rst(rst),
+      .s_tick(done)
+    );
 
     // state and reg initialization
     always @(posedge clk)
