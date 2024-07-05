@@ -8,7 +8,7 @@ module uart_tx #( parameter DBIT = 8 , SB_TICK = 16)
     output reg tx 
   );
 
-   localparam idle = 0 , start = 1 , data = 2 , stop = 3;
+    localparam idle = 0 , start = 1 , data = 2 , stop = 3;
   
     reg [ 2 : 0 ] n_reg ;  // counter for DBITS
     reg [ 3 : 0 ] s_reg ;  // counter for s_tick
