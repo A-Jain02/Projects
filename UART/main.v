@@ -21,11 +21,11 @@ module UART
 
   //timer as baug rate generator
 
-  wire tick;
+  wire s_tick;
   timer_input #( .BITS(11)) baud_rate_generator (
     .clk(clk),
     .reset_n(reset_n),
-    .done(tick)
+    .done(s_tick)
   );
 
   //receiver module 
@@ -36,7 +36,7 @@ module UART
     .clk(clk),
     .reset_n(reset_n),
     .rx(rx),
-    .s_tick(tick),
+    .s_tick(s_tick),
     .rx_done_tick(rx_done_tick),
     .rx_dout(rx_dout)
   );
@@ -60,7 +60,7 @@ module UART
     .clk(clk),
     .reset_n(reset_n),
     .tx(tx),
-    .s_tick(tick),
+    .s_tick(s_tick),
     .tx_start(~tx_fifo_empty),
     .tx_din(dout),
     tx_done_tick(rd_en)
