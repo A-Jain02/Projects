@@ -16,11 +16,11 @@ module uart_tx #( parameter DBIT = 8 , SB_TICK = 16)
     reg [ 1 : 0 ] state  ; // the 4 states
     reg tx_next ; // tracking the transmitted bit
 
-    wire s_tick;
-    baud_generator #(.CLOCK_FREQ(CLOCK_FREQ), .BAUD_RATE(BAUD_RATE)) baud_gen (
-        .clk(clk),
-        .rst(rst),
-      .s_tick(done)
+    wire tick;
+    timer_input #( .BITS(11)) baud_rate_generator (
+    .clk(clk),
+    .reset_n(reset_n),
+    .done(tick)
     );
 
     // state and reg initialization
