@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module timer_input #( parameter BITS = 11 )
+module timer_input #( parameter BITS = 10 )
   (
     input clk , reset_n ,
     output done 
