@@ -2,12 +2,12 @@
 
 module timer_input #( parameter BITS = 11 )
   (
-    input clk , reset_n , enable ,
-    input [BITS - 1 : 0 ] FINAL_VALUE,
+    input clk , reset_n , enable,
     output done 
   ) ; 
 
-  reg [BITS -1 : 0 ] Q_reg , Q_next;
+  reg [BITS - 1 : 0 ] counter ;
+  reg baud_clk_reg;
 
   always @(posedge clk)
   begin 
@@ -19,10 +19,9 @@ module timer_input #( parameter BITS = 11 )
       Q_reg <= Q_reg ;
   end
 
-  assign done = Q_reg == FINAL_VALUE
+  assign done = baud_clk_reg
 
-    always @*
-      Q_next = done ? 'b0 : Q_reg + 1;
+
 
 endmodule 
       
