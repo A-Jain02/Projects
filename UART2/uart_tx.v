@@ -47,3 +47,11 @@ module uart_tx (
 
 endmodule
 
+
+
+// initial begin
+    $monitor($time, "   The Outputs:  Data Out = %h  Error Flag = %b  Tx Active Flag = %b  Tx Done Flag = %b  Rx Active Flag = %b  Rx Done Flag = %b  The Inputs:   Reset = %b  Send = %b  Data In = %h  Parity Type = %b  Baud Rate = %b ",
+    data_out_tb[7:0], error_flag_tb[2:0], tx_active_flag_tb, tx_done_flag_tb, rx_active_flag_tb, rx_done_flag_tb, reset_n_tb, send_tb,
+    data_in_tb[7:0], parity_type_tb[1:0], baud_rate_tb[1:0]);
+end
+
